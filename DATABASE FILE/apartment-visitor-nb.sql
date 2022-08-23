@@ -1,30 +1,7 @@
--- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: jan 13, 2022 at 06:04 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `apartment-visitor-nb`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `apartment`
---
 
 CREATE TABLE `apartment` (
   `ID` int(11) NOT NULL,
@@ -33,9 +10,6 @@ CREATE TABLE `apartment` (
   `apartment_status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `apartment`
---
 
 INSERT INTO `apartment` (`ID`, `apartment_number`, `building_number`, `apartment_status`) VALUES
 (6, '201', 'C', 'Empty'),
@@ -53,11 +27,6 @@ INSERT INTO `apartment` (`ID`, `apartment_number`, `building_number`, `apartment
 (18, '444', 'D', 'Owned'),
 (19, '580', 'A', 'Owned');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbladmin`
---
 
 CREATE TABLE `tbladmin` (
   `ID` int(5) NOT NULL,
@@ -70,18 +39,11 @@ CREATE TABLE `tbladmin` (
   `AdminRegdate` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbladmin`
---
+
 
 INSERT INTO `tbladmin` (`ID`, `AdminName`, `UserName`, `Security_Code`, `MobileNumber`, `Email`, `Password`, `AdminRegdate`) VALUES
 (1, 'Owner', 'admin', 1010, 7986136181, 'admin@gmail.com', 'd00f5d5217896fb7fd601412cb890830', '2022-01-12 03:25:47');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tblvisitor`
---
 
 CREATE TABLE `tblvisitor` (
   `ID` int(5) NOT NULL,
@@ -97,9 +59,7 @@ CREATE TABLE `tblvisitor` (
   `outtime` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tblvisitor`
---
+
 
 INSERT INTO `tblvisitor` (`ID`, `VisitorName`, `MobileNumber`, `Address`, `Gender`, `Apartment`, `BuildingNo`, `EnterDate`, `outtime`) VALUES
 (1, 'Parth Muchal', 8878520000, '29 Brook Town Street', 'Male', '201', 'C','2022-01-13 06:11:53', '2032-01-12 05:14:20'),
@@ -115,39 +75,29 @@ INSERT INTO `tblvisitor` (`ID`, `VisitorName`, `MobileNumber`, `Address`, `Gende
 (15, 'Bob Koli', 7012478193, '19/9 LIG', 'Male', '170', 'C', '2022-02-02 05:19:37', NULL),
 (16, 'Vikram Kumar', 7002719610, 'Wright Street', 'Male', '580', 'A ','2022-02-02 15:38:00', NULL);
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `apartment`
 --
 ALTER TABLE `apartment`
   ADD PRIMARY KEY (`ID`);
 
---
--- Indexes for table `tbladmin`
---
+
 ALTER TABLE `tbladmin`
   ADD PRIMARY KEY (`ID`);
 
---
--- Indexes for table `tblvisitor`
---
+
+
 ALTER TABLE `tblvisitor`
   ADD PRIMARY KEY (`ID`);
 
---
--- AUTO_INCREMENT for dumped tables
---
+
 
 --
--- AUTO_INCREMENT for table `apartment`
+
 --
 ALTER TABLE `apartment`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
--- AUTO_INCREMENT for table `tbladmin`
+
 --
 ALTER TABLE `tbladmin`
   MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
@@ -156,6 +106,3 @@ ALTER TABLE `tbladmin`
 --
 ALTER TABLE `tblvisitor`
   MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
